@@ -4,6 +4,8 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const archiveProjects = [
+  { name: 'YashAry04/Yasharyan-Folio', tech: 'React / Tailwind' },
+  { name: 'YashAry04/2D-Game', tech: 'JavaScript / GameDev' },
   { name: 'YashAry04/Inventory-Management', tech: 'MERN / AWS' },
   { name: 'YashAry04/Storage-Management', tech: 'Next.js 15 / Appwrite' },
 ];
