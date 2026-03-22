@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand: #FF4D00;
+  --brand-rgb: 255, 77, 0;
+  --color-brand-dim: #FF4D0010;
+  --color-bg: #080808;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: white;
+    font-family: 'Satoshi', 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+
+  body ::selection {
+    background-color: rgba(255, 77, 0, 0.3);
+    color: white;
+  }
+
+  h1, h2, h3, h4, .display-font {
+    font-family: 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: 10px;
+  }
+}
+
+@layer utilities {
+  .bg-bg { background-color: var(--color-bg); }
+  .text-brand { color: var(--color-brand); }
+  .bg-brand { background-color: var(--color-brand); }
+  .border-brand { border-color: var(--color-brand); }
+  .bg-brand\/5 { background-color: rgba(255, 77, 0, 0.05); }
+  .bg-brand\/10 { background-color: rgba(255, 77, 0, 0.1); }
+  .bg-brand\/30 { background-color: rgba(255, 77, 0, 0.3); }
+
+  .font-cabinet {
+    font-family: 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .font-satoshi {
+    font-family: 'Satoshi', 'Inter', sans-serif;
+  }
+
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.05;
+  }
+
+  .mesh-blob {
+    @apply absolute rounded-full blur-[100px] mix-blend-soft-light pointer-events-none;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+
+  .text-outline-thin {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    color: transparent;
+  }
+
+  .text-outline-brand {
+    -webkit-text-stroke: 1px var(--color-brand);
+    color: transparent;
+  }
+
+  .cubic-bezier {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .section-container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .section-container {
+      padding: 4rem 8rem;
+    }
+  }
+
+  .section-content {
+    @apply relative z-10 w-full max-w-7xl mx-auto flex flex-col pb-32;
+    height: 100%;
+  }
+
+  .giant-header {
+    @apply text-[12vw] md:text-[8vw] leading-[0.85] font-cabinet font-black uppercase tracking-tighter italic;
+  }
+
+  .subsite-header {
+    @apply mono text-brand mb-4 block;
+  }
+
+  .interactive {
+    cursor: pointer;
+  }
+}
